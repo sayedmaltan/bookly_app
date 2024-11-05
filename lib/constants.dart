@@ -1,3 +1,4 @@
 import 'dart:ui';
 
-const primaryColor= Color(0xff100B20);
+const kPrimaryColor= Color(0xff100B20);
+const durationPages=Duration(milliseconds: 400);
