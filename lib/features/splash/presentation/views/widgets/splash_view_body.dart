@@ -65,7 +65,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       const Duration(
         seconds: 3,
       ),
-      () =>  context.go(AppRouter.homeView)
+      () => context.push(AppRouter.homeView)
     );
   }
 }
