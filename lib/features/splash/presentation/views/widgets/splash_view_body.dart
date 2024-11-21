@@ -1,7 +1,8 @@
+import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/asstes.dart';
-import 'package:bookly_app/features/home/presentaion/views/home.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/function/navigate_with_transation.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../home/presentation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -62,9 +63,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(
-        const Duration(
-          seconds: 3,
-        ),
-        () => navigateWithTransation(const HomeView()));
+      const Duration(
+        seconds: 3,
+      ),
+      () =>  context.go(AppRouter.homeView)
+    );
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CustomListItem extends StatelessWidget {
-  const CustomListItem({super.key});
+import '../../../../../core/utils/asstes.dart';
+
+class CustomListItemPhoto extends StatelessWidget {
+  const CustomListItemPhoto({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class CustomListItem extends StatelessWidget {
             image: const DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
-                  'assets/images/medium.webp',
+                  AssetsImages.testListItem,
                 )),
             borderRadius: BorderRadiusDirectional.circular(16)),
       ),
