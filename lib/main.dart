@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kPrimaryColor,
             textTheme: GoogleFonts.montserratTextTheme(
-                ThemeData.dark().textTheme,
+               ThemeData.dark().textTheme,
             )
         ),
         debugShowCheckedModeBanner: false,
