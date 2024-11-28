@@ -11,7 +11,7 @@ class CustomListItemPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.31 / 2.1,
+      aspectRatio: 1.29  / 2.1,
       child: Container(
         decoration: BoxDecoration(
             image: const DecorationImage(
