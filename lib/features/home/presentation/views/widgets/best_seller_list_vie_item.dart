@@ -16,7 +16,8 @@ class BestSellerListViewItem extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomListItemPhoto(),
+            CustomListItemPhoto(
+            ),
             SizedBox(width: 30,),
             BestSellerListViewColumnText()
           ],

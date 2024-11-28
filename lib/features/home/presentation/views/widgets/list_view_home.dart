@@ -14,7 +14,8 @@ class HorizontalListViewOfHome extends StatelessWidget {
         itemCount: 10,
         itemBuilder: (context, index) => const Padding(
           padding: EdgeInsets.only(right: 15.0),
-          child: CustomListItemPhoto(),
+          child: CustomListItemPhoto(
+          ),
         ),
       ),
     );

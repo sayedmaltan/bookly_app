@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/asstes.dart';
 
 class CustomListItemPhoto extends StatelessWidget {
-  const CustomListItemPhoto({super.key});
+  const CustomListItemPhoto({
+    super.key,
+  });
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,5 +24,3 @@ class CustomListItemPhoto extends StatelessWidget {
     );
   }
 }
-
-

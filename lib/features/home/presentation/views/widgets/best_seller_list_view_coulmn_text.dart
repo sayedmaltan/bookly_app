@@ -2,6 +2,7 @@ import 'package:bookly_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/utils/styles.dart';
+import 'custom_star_row.dart';
 
 class BestSellerListViewColumnText extends StatelessWidget {
   const BestSellerListViewColumnText({super.key});
@@ -34,21 +35,7 @@ class BestSellerListViewColumnText extends StatelessWidget {
                   style: Styles.textStyle20,
                 ),
                 Spacer(),
-                Icon(
-                  FontAwesomeIcons.solidStar,
-                  size: 15,
-                  color: Color(0xffFFDD4F),
-                ),
-                SizedBox(width: 7,),
-                Text(
-                  '4.8',
-                  style: Styles.textStyle16,
-                ),
-                SizedBox(width: 9,),
-                Text(
-                  '(2390)',
-                  style: Styles.textStyle14,
-                ),
+                CustomStarRow(),
               ],
             ),
           ],
@@ -57,3 +44,4 @@ class BestSellerListViewColumnText extends StatelessWidget {
     );
   }
 }
+
