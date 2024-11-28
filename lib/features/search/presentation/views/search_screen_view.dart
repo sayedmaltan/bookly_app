@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/search/presentation/views/widgets/search_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreenView extends StatelessWidget {
@@ -6,6 +7,7 @@ class SearchScreenView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      body: SearchViewBody(),
     );
   }
 }
