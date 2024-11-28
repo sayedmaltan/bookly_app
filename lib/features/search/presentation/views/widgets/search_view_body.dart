@@ -1,6 +1,8 @@
 import 'package:bookly_app/core/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 
+import 'search_items_list.dart';
+
 class SearchViewBody extends StatefulWidget {
   const SearchViewBody({super.key});
 
@@ -13,11 +15,11 @@ class _SearchViewBodyState extends State<SearchViewBody> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: CustomTextFormField(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            CustomTextFormField(
               focusedBorderColor: Colors.grey,
               suffixIcon: Icons.search,
               hintText: 'Search',
@@ -28,9 +30,10 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                 return null;
               },
             ),
-          ),
-
-        ],
+            SizedBox(height: 20,),
+            Expanded(child: SearchItemsList()),
+          ],
+        ),
       ),
     );
   }
