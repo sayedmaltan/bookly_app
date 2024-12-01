@@ -1,10 +1,16 @@
 import 'package:bookly_app/constants.dart';
+import 'package:bookly_app/features/home/data/models/book_model.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/styles.dart';
 import 'custom_star_row.dart';
 
 class BestSellerListViewColumnText extends StatelessWidget {
-  const BestSellerListViewColumnText({super.key});
+  const BestSellerListViewColumnText({
+    super.key,
+    required this.bookModel,
+  });
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,25 +22,24 @@ class BestSellerListViewColumnText extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Harry Potter and the Goblet of Fire',
+              bookModel.volumeInfo!.title as String,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: Styles.textStyle20.copyWith(
-                  fontFamily: kGTSectraFine
-              ),
+              style: Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
             ),
             Text(
-              'J.K. Rowling',
+              bookModel.volumeInfo!.authors![0],
               style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w400),
             ),
-            const Row(
+             Row(
               children: [
                 Text(
-                  '19.99 €',
+                  'free',
                   style: Styles.textStyle20,
                 ),
                 Spacer(),
-                CustomStarRow(),
+                CustomStarRow(
+                ),
               ],
             ),
           ],
@@ -43,4 +48,3 @@ class BestSellerListViewColumnText extends StatelessWidget {
     );
   }
 }
-

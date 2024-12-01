@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item_photo.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,10 @@ import 'custom_row_action.dart';
 import 'custom_star_row.dart';
 
 class BookDetailsBody extends StatelessWidget {
-  const BookDetailsBody({super.key});
+  const BookDetailsBody({
+    super.key,
+  });
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class BookDetailsBody extends StatelessWidget {
         SliverFillRemaining(
           hasScrollBody: false,
           child: SafeArea(
-            child:Padding(
+            child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
@@ -25,7 +29,9 @@ class BookDetailsBody extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: width * 0.2),
                     child: CustomListItemPhoto(
-                      imageUrl: 'https://img.freepik.com/free-photo/animal-eye-staring-close-up-watch-nature-generative-ai_188544-15471.jpg',
+                      imageUrl:
+                      // bookModel.volumeInfo!.imageLinks!.thumbnail as String,
+                          'https://img.freepik.com/free-photo/animal-eye-staring-close-up-watch-nature-generative-ai_188544-15471.jpg',
                     ),
                   ),
                   SizedBox(
@@ -58,8 +64,8 @@ class BookDetailsBody extends StatelessWidget {
                     alignment: AlignmentDirectional.centerStart,
                     child: Text(
                       'You can also like',
-                      style:
-                      Styles.textStyle14.copyWith(fontWeight: FontWeight.w600),
+                      style: Styles.textStyle14
+                          .copyWith(fontWeight: FontWeight.w600),
                     ),
                   ),
                   SizedBox(

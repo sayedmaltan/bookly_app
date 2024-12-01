@@ -7,6 +7,8 @@ class CustomStarRow extends StatelessWidget {
     super.key,
   });
 
+
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,12 +19,16 @@ class CustomStarRow extends StatelessWidget {
           size: 14,
           color: Color(0xffFFDD4F),
         ),
-        SizedBox(width: 7,),
+        SizedBox(
+          width: 7,
+        ),
         Text(
           '4.8',
           style: Styles.textStyle16,
         ),
-        SizedBox(width: 9,),
+        SizedBox(
+          width: 9,
+        ),
         Opacity(
           opacity: 0.7,
           child: Text(
