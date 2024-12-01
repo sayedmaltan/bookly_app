@@ -25,7 +25,8 @@ abstract class AppRouter{
           GoRoute(
             path: bookDetailsView,
             builder: (BuildContext context, GoRouterState state) {
-              return const BookDetailsView();
+              return const BookDetailsView(
+              );
             },
           ),
           GoRoute(
