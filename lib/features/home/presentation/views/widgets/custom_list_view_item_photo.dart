@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/asstes.dart';
 
 class CustomListItemPhoto extends StatelessWidget {
   const CustomListItemPhoto({
     super.key,
+    required this.imageUrl,
   });
 
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1.29  / 2.1,
+      aspectRatio: 1.29 / 2.1,
       child: Container(
         decoration: BoxDecoration(
-            image: const DecorationImage(
+            image:  DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage(
-                  AssetsImages.testListItem,
+                image: NetworkImage(
+                    imageUrl
                 )),
             borderRadius: BorderRadiusDirectional.circular(16)),
       ),

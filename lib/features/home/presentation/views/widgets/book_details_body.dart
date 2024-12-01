@@ -24,7 +24,9 @@ class BookDetailsBody extends StatelessWidget {
                   CustomBookDetailsAppbar(),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: width * 0.2),
-                    child: CustomListItemPhoto(),
+                    child: CustomListItemPhoto(
+                      imageUrl: 'https://img.freepik.com/free-photo/animal-eye-staring-close-up-watch-nature-generative-ai_188544-15471.jpg',
+                    ),
                   ),
                   SizedBox(
                     height: 45,
@@ -76,4 +78,3 @@ class BookDetailsBody extends StatelessWidget {
     );
   }
 }
-

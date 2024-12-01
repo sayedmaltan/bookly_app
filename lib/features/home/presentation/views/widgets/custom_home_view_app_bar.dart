@@ -1,9 +1,8 @@
 import 'package:bookly_app/core/utils/app_router.dart';
+import 'package:bookly_app/core/utils/asstes.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../../core/utils/asstes.dart';
 
 class CustomHomeViewAppBar extends StatelessWidget {
   const CustomHomeViewAppBar({super.key});
