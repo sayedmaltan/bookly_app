@@ -17,6 +17,7 @@ class BestSellerListViewItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomListItemPhoto(
+              imageUrl: 'https://img.freepik.com/free-photo/animal-eye-staring-close-up-watch-nature-generative-ai_188544-15471.jpg',
             ),
             SizedBox(width: 30,),
             BestSellerListViewColumnText()

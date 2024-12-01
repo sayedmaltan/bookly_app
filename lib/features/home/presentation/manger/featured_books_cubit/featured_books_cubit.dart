@@ -6,7 +6,7 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
   FeaturedBooksCubit({required this.homeRepo}) : super(FeaturedBooksInitial());
   HomeRepo homeRepo;
 
-  static FeaturedBooksCubit get(context){
+  static FeaturedBooksCubit get(context) {
     return BlocProvider.of(context);
   }
 
@@ -14,9 +14,7 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
     emit(FeaturedBooksLoading());
     var result = await homeRepo.fetchFeaturedBooks();
     result.fold(
-      (failure) => {
-        emit(FeaturedBooksFailure(errMessage: failure.errMessage))
-      },
+      (failure) => {emit(FeaturedBooksFailure(errMessage: failure.errMessage))},
       (books) {
         emit(FeaturedBooksSuccess(featuredBooks: books));
       },

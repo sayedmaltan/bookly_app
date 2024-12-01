@@ -11,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  setupServiceLocator();
   runApp(const MyApp());
 }
 
@@ -23,12 +24,12 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => FeaturedBooksCubit(
-            homeRepo: getIt.get<HomeRepoImpl>()
-          ),
+            homeRepo: getIt.get<HomeRepoImpl>(),
+          )..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
-            homeRepo: getIt.get<HomeRepoImpl>()
+            homeRepo: HomeRepoImpl(apiService: ApiService(dio: Dio()))
           ),
         ),
       ],

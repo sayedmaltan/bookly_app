@@ -13,6 +13,7 @@ class BookDetailsListView extends StatelessWidget {
       itemBuilder: (context, index) => const Padding(
         padding: EdgeInsets.only(right: 15.0),
         child: CustomListItemPhoto(
+          imageUrl: 'https://img.freepik.com/free-photo/animal-eye-staring-close-up-watch-nature-generative-ai_188544-15471.jpg',
         ),
       ),
     );
