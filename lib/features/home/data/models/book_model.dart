@@ -1,24 +1,23 @@
 class BookModel {
   BookModel({
-      this.kind, 
-      this.id, 
-      this.etag, 
-      this.selfLink, 
-      this.volumeInfo, 
-      this.saleInfo, 
-      this.accessInfo, 
+      this.kind,
+      this.id,
+      this.etag,
+      this.selfLink,
+       this.volumeInfo,
+      this.saleInfo,
+      this.accessInfo,
       this.searchInfo,});
 
-  BookModel.fromJson(dynamic json) {
-    kind = json['kind'];
-    id = json['id'];
-    etag = json['etag'];
-    selfLink = json['selfLink'];
-    volumeInfo = json['volumeInfo'] != null ? VolumeInfo.fromJson(json['volumeInfo']) : null;
-    saleInfo = json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
-    accessInfo = json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
-    searchInfo = json['searchInfo'] != null ? SearchInfo.fromJson(json['searchInfo']) : null;
-  }
+   BookModel.fromJson(dynamic json){
+     volumeInfo = VolumeInfo.fromJson(json['volumeInfo']);
+     id=json['id'] ;
+     etag = json['etag'];
+     selfLink = json['selfLink'];
+     saleInfo = json['saleInfo'] != null ? SaleInfo.fromJson(json['saleInfo']) : null;
+     accessInfo = json['accessInfo'] != null ? AccessInfo.fromJson(json['accessInfo']) : null;
+     searchInfo = json['searchInfo'] != null ? SearchInfo.fromJson(json['searchInfo']) : null;
+   }
   String? kind;
   String? id;
   String? etag;
@@ -70,15 +69,15 @@ class SearchInfo {
 
 class AccessInfo {
   AccessInfo({
-      this.country, 
-      this.viewability, 
-      this.embeddable, 
-      this.publicDomain, 
-      this.textToSpeechPermission, 
-      this.epub, 
-      this.pdf, 
-      this.webReaderLink, 
-      this.accessViewStatus, 
+      this.country,
+      this.viewability,
+      this.embeddable,
+      this.publicDomain,
+      this.textToSpeechPermission,
+      this.epub,
+      this.pdf,
+      this.webReaderLink,
+      this.accessViewStatus,
       this.quoteSharingAllowed,});
 
   AccessInfo.fromJson(dynamic json) {
@@ -161,8 +160,8 @@ class Epub {
 
 class SaleInfo {
   SaleInfo({
-      this.country, 
-      this.saleability, 
+      this.country,
+      this.saleability,
       this.isEbook,});
 
   SaleInfo.fromJson(dynamic json) {
@@ -186,24 +185,24 @@ class SaleInfo {
 
 class VolumeInfo {
   VolumeInfo({
-      this.title, 
-      this.authors, 
-      this.publisher, 
-      this.publishedDate, 
-      this.description, 
-      this.industryIdentifiers, 
-      this.readingModes, 
-      this.pageCount, 
-      this.printType, 
-      this.categories, 
-      this.maturityRating, 
-      this.allowAnonLogging, 
-      this.contentVersion, 
-      this.panelizationSummary, 
-      this.imageLinks, 
-      this.language, 
-      this.previewLink, 
-      this.infoLink, 
+      this.title,
+      this.authors,
+      this.publisher,
+      this.publishedDate,
+      this.description,
+      this.industryIdentifiers,
+      this.readingModes,
+      this.pageCount,
+      this.printType,
+      this.categories,
+      this.maturityRating,
+      this.allowAnonLogging,
+      this.contentVersion,
+      this.panelizationSummary,
+      this.imageLinks,
+      this.language,
+      this.previewLink,
+      this.infoLink,
       this.canonicalVolumeLink,});
 
   VolumeInfo.fromJson(dynamic json) {
@@ -287,16 +286,17 @@ class VolumeInfo {
 }
 
 class ImageLinks {
+  String? smallThumbnail;
+  String? thumbnail;
   ImageLinks({
-      this.smallThumbnail, 
+      this.smallThumbnail,
       this.thumbnail,});
 
   ImageLinks.fromJson(dynamic json) {
     smallThumbnail = json['smallThumbnail'];
     thumbnail = json['thumbnail'];
   }
-  String? smallThumbnail;
-  String? thumbnail;
+
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -309,7 +309,7 @@ class ImageLinks {
 
 class PanelizationSummary {
   PanelizationSummary({
-      this.containsEpubBubbles, 
+      this.containsEpubBubbles,
       this.containsImageBubbles,});
 
   PanelizationSummary.fromJson(dynamic json) {
@@ -330,7 +330,7 @@ class PanelizationSummary {
 
 class ReadingModes {
   ReadingModes({
-      this.text, 
+      this.text,
       this.image,});
 
   ReadingModes.fromJson(dynamic json) {
@@ -351,7 +351,7 @@ class ReadingModes {
 
 class IndustryIdentifiers {
   IndustryIdentifiers({
-      this.type, 
+      this.type,
       this.identifier,});
 
   IndustryIdentifiers.fromJson(dynamic json) {

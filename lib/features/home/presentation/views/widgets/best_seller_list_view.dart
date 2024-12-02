@@ -4,7 +4,6 @@ import 'package:bookly_app/features/home/presentation/manger/newest_books_cubit/
 import 'package:bookly_app/features/home/presentation/manger/newest_books_cubit/newest_books_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'best_seller_list_vie_item.dart';
 
 
@@ -32,7 +31,7 @@ class BestSellerListView extends StatelessWidget {
          );
        }
       else if(state is NewestBooksFailure) {
-         return CustomErrorWidget(errMessage: state.errMessage);
+         return Center(child: CustomErrorWidget(errMessage: state.errMessage));
        }
       else {
         return CustomLoadingWidget();

@@ -28,7 +28,7 @@ class BestSellerListViewColumnText extends StatelessWidget {
               style: Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
             ),
             Text(
-              bookModel.volumeInfo!.authors![0],
+              bookModel.volumeInfo!.authors!.isNotEmpty?bookModel.volumeInfo!.authors![0]:'No author found',
               style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w400),
             ),
              Row(

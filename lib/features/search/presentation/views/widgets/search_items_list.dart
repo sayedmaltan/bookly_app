@@ -11,9 +11,10 @@ class SearchItemsList extends StatelessWidget {
       itemCount: 10,
       itemBuilder: (context, index) => Padding(
         padding: EdgeInsets.only(bottom: 20.0),
-        child: BestSellerListViewItem(
-          bookModel: BookModel(),
-        ),
+        // child: BestSellerListViewItem(
+        //   bookModel: BookModel(
+        //   ),
+        // ),
       ),
     );
   }
