@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_details_list_view.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_list_view_item_photo.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,10 @@ import 'custom_star_row.dart';
 class BookDetailsBody extends StatelessWidget {
   const BookDetailsBody({
     super.key,
+    required this.bookModel,
   });
 
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class BookDetailsBody extends StatelessWidget {
           hasScrollBody: false,
           child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 children: [
                   CustomBookDetailsAppbar(),
@@ -29,23 +32,24 @@ class BookDetailsBody extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: width * 0.2),
                     child: CustomListItemPhoto(
                       imageUrl:
-                      // bookModel.volumeInfo!.imageLinks!.thumbnail as String,
-                          'https://img.freepik.com/free-photo/animal-eye-staring-close-up-watch-nature-generative-ai_188544-15471.jpg',
+                          bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
                     ),
                   ),
                   SizedBox(
                     height: 45,
                   ),
                   Text(
-                    'The Jungle Book',
+                    bookModel.volumeInfo!.title??'No title found',
                     style: Styles.textStyle30KGT,
+                    textAlign: TextAlign.center,
                   ),
                   Opacity(
-                      opacity: 0.7,
-                      child: Text(
-                        'Rudyard Kipling',
-                        style: Styles.textStyle18.copyWith(fontSize: 16),
-                      )),
+                    opacity: 0.7,
+                    child: Text(
+                      bookModel.volumeInfo!.authors!.isEmpty ? 'No author found':bookModel.volumeInfo!.authors?[0]??'No author found',
+                      style: Styles.textStyle18.copyWith(fontSize: 16),
+                    ),
+                  ),
                   SizedBox(
                     height: 14,
                   ),
@@ -53,7 +57,9 @@ class BookDetailsBody extends StatelessWidget {
                   SizedBox(
                     height: 37,
                   ),
-                  CustomRowAction(),
+                  CustomRowAction(
+                    bookModel: bookModel,
+                  ),
                   Expanded(
                     child: SizedBox(
                       height: 30,
@@ -83,3 +89,4 @@ class BookDetailsBody extends StatelessWidget {
     );
   }
 }
+

@@ -16,15 +16,16 @@ class BestSellerListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.push(AppRouter.bookDetailsView),
+      onTap: () => context.push(AppRouter.bookDetailsView,extra:bookModel ),
       child: SizedBox(
         height: 140,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomListItemPhoto(
+
               imageUrl:
-                  bookModel.volumeInfo!.imageLinks!.smallThumbnail as String,
+                  bookModel.volumeInfo?.imageLinks?.smallThumbnail ??'',
             ),
             SizedBox(
               width: 30,
