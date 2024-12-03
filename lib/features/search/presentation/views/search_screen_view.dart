@@ -2,8 +2,7 @@ import 'package:bookly_app/features/search/presentation/views/widgets/search_vie
 import 'package:flutter/material.dart';
 
 class SearchScreenView extends StatelessWidget {
-  const SearchScreenView({super.key});
-
+  const SearchScreenView({super.key, });
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

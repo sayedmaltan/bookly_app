@@ -22,13 +22,15 @@ class BestSellerListViewColumnText extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              bookModel.volumeInfo!.title as String,
+              bookModel.volumeInfo?.title??"No title found" ,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: Styles.textStyle20.copyWith(fontFamily: kGTSectraFine),
             ),
             Text(
               bookModel.volumeInfo!.authors!.isNotEmpty?bookModel.volumeInfo!.authors![0]:'No author found',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w400),
             ),
              Row(

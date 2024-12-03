@@ -17,7 +17,10 @@ class _BookDetailsViewState extends State<BookDetailsView> {
   @override
   void initState() {
     SimilarBooksCubit similarBooksCubit= SimilarBooksCubit.get(context);
-    similarBooksCubit.fetchSimilarBooks(category: widget.bookModel.volumeInfo!.categories![0]);
+    if(widget.bookModel.volumeInfo!.categories!.isNotEmpty)
+      {
+        similarBooksCubit.fetchSimilarBooks(category: widget.bookModel.volumeInfo!.categories![0]);
+      }
     super.initState();
   }
   @override

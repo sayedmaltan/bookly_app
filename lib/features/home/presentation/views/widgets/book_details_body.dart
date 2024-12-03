@@ -39,14 +39,14 @@ class BookDetailsBody extends StatelessWidget {
                     height: 45,
                   ),
                   Text(
-                    bookModel.volumeInfo!.title as String,
+                    bookModel.volumeInfo!.title??'No title found',
                     style: Styles.textStyle30KGT,
                     textAlign: TextAlign.center,
                   ),
                   Opacity(
                     opacity: 0.7,
                     child: Text(
-                      bookModel.volumeInfo!.authors?[0] ?? 'No author found',
+                      bookModel.volumeInfo!.authors!.isEmpty ? 'No author found':bookModel.volumeInfo!.authors?[0]??'No author found',
                       style: Styles.textStyle18.copyWith(fontSize: 16),
                     ),
                   ),
@@ -57,7 +57,9 @@ class BookDetailsBody extends StatelessWidget {
                   SizedBox(
                     height: 37,
                   ),
-                  CustomRowAction(),
+                  CustomRowAction(
+                    bookModel: bookModel,
+                  ),
                   Expanded(
                     child: SizedBox(
                       height: 30,

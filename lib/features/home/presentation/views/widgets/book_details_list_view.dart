@@ -4,6 +4,8 @@ import 'package:bookly_app/features/home/presentation/manger/similar_books_cubit
 import 'package:bookly_app/features/home/presentation/manger/similar_books_cubit/similar_books_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../core/utils/app_router.dart';
 import 'custom_list_view_item_photo.dart';
 
 class BookDetailsListView extends StatelessWidget {
@@ -18,11 +20,16 @@ class BookDetailsListView extends StatelessWidget {
         if(state is SimilarBooksSuccess) {
           return ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: 10,
+          itemCount: state.similarBooks.length,
           itemBuilder: (context, index) =>  Padding(
             padding: EdgeInsets.only(right: 15.0),
-            child: CustomListItemPhoto(
-              imageUrl:state.similarBooks[index].volumeInfo?.imageLinks?.thumbnail??'',
+            child: GestureDetector(
+              onTap: () {
+                context.push(AppRouter.bookDetailsView,extra:state.similarBooks[index] );
+              },
+              child: CustomListItemPhoto(
+                imageUrl:state.similarBooks[index].volumeInfo?.imageLinks?.thumbnail??'',
+              ),
             ),
           ),
         );
@@ -30,7 +37,6 @@ class BookDetailsListView extends StatelessWidget {
         else if(state is SimilarBooksFailure)
           {
             return CustomErrorWidget(errMessage: state.errMessage);
-
           }
         else
           {

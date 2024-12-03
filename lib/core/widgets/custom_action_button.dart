@@ -5,13 +5,14 @@ class CustomActionButton extends StatelessWidget {
   final String text;
   final TextStyle textStyle;
   final BorderRadiusGeometry borderRadiusGeometry;
+  final VoidCallback onPressed;
 
   const CustomActionButton({
     super.key,
     required this.backgroundColor,
     required this.text,
     required this.textStyle,
-    required this.borderRadiusGeometry,
+    required this.borderRadiusGeometry, required this.onPressed,
   });
 
   @override
@@ -20,7 +21,7 @@ class CustomActionButton extends StatelessWidget {
       child: SizedBox(
         height: 48,
         child: TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: TextButton.styleFrom(
               backgroundColor: backgroundColor,
               shape: RoundedRectangleBorder(
