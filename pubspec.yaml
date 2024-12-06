@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   font_awesome_flutter: ^10.8.0
   google_fonts: ^6.2.1
-  go_router: ^14.6.1
+  go_router: ^14.6.2
   dartz: ^0.10.1
   dio: ^5.7.0
   flutter_bloc: ^8.1.6

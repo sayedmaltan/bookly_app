@@ -10,9 +10,9 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: SingleChildScrollView(
-        child: Padding(
+    return  SafeArea(
+      child: ListView(
+        children: [Padding(
           padding: EdgeInsets.only(left: 10.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class HomeViewBody extends StatelessWidget {
               BestSellerListView(),
             ],
           ),
-        ),
+        ),],
       ),
     );
   }
