@@ -21,28 +21,22 @@ Bookly is a Flutter-based mobile application that allows users to explore and re
 
 ![image](https://github.com/user-attachments/assets/1f5f8b93-58dc-412c-aea9-6a2b6f9f7f53)
 
-
-
 ![image](https://github.com/user-attachments/assets/a9ef49f8-9cf6-41f7-ba77-658c0b07d7a0)
-
-
-
 
 ![image](https://github.com/user-attachments/assets/e1d20f1d-55c6-4b56-a5a4-11c223ebd410)
 
 ![image](https://github.com/user-attachments/assets/c8a7a0af-f9f3-44cf-9eeb-b045895abb06)
 
-
 ## 🎬 Demo
 
-Watch the demo video here: [Bookly App Demo](#)
+Watch the demo video here: [Bookly App Demo](https://drive.google.com/file/d/13Qd94n5waX85UtodoqVscBdjhIk40Zv5/view?usp=sharing)
 
 ## 🚀 Installation & Setup
 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/bookly.git
+    git clone https://github.com/sayedmaltan/bookly.git
     ```
 
 2. Navigate to the project directory:
