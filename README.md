@@ -64,4 +64,3 @@ Contributions are welcome! Feel free to fork the repo and submit pull requests.
 ## 📩 Contact
 
 For any inquiries, reach out to me on [LinkedIn](https://www.linkedin.com/in/elsayedmaltan).
-
